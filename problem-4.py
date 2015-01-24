@@ -42,11 +42,13 @@ def is_palindrom(number):
 
 
 def main():
+    multis = []
     for i in reversed(range(100, 1000)):
         for j in reversed(range(100, 1000)):
             multi = i * j
             if is_palindrom(multi):
-                return multi
+                multis.append(multi)
+    return max(multis)
 
 if __name__ == "__main__":
     print(main())
