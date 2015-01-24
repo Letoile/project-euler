@@ -16,7 +16,6 @@ Find the largest palindrome made from the product of two 3-digit numbers.
 Найдите самый большой палиндром, полученный умножением двух трёхзначных чисел.
 """
 
-# without optimization
 
 def digits_num(number):
     count = 0
@@ -27,18 +26,8 @@ def digits_num(number):
 
 
 def is_palindrom(number):
-    nnumber = number
-    digits = digits_num(nnumber)
-    right_part = 0
-    for num in range(1, (digits / 2) + 1):
-        right_part *= 10
-        right_part += nnumber % 10
-        nnumber /= 10
-    if (digits % 2) != 0:
-        nnumber /= 10
-    left_part = str(nnumber)
-    right_part = str(right_part)
-    return left_part == right_part
+    num_string = str(number)
+    return num_string == num_string[::-1]
 
 
 def main():
