@@ -27,8 +27,7 @@ def main():
     max_value = 4000000
     fib1 = 1
     fib2 = 2
-    while fib2 < max_value:
-        if_even_lets_sum(fib1)
+    while fib2 <= max_value:
         if_even_lets_sum(fib2)
         fib2 += fib1
         fib1 = fib2 - fib1
