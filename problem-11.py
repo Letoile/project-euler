@@ -40,6 +40,8 @@ What is the greatest product of four adjacent numbers in the same direction
 расположенных в любом направлении (вверх, вниз, вправо, влево или по диагонали)?
 """
 
+import time
+ 
 DATA = '''08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00
 81 49 31 73 55 79 14 29 93 71 40 67 53 88 30 03 49 13 36 65
@@ -62,8 +64,9 @@ DATA = '''08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48'''
 
 
-#todo АААА отвратительное топорное решение. В выходные оптимизировать! >_<
+#todo optimize?
 def main():
+    start = time.time()
     temp_strings = DATA.split('\n')
     data_array = []
     for arr in temp_strings:
@@ -90,9 +93,11 @@ def main():
             temp = first * second * third * forth
             if temp > product:
                 product = temp
-    # horizontal
+
+    #horizontal and vertical
     for column in range(0, 17):
         for row in range(0, 20):
+        	#horizontal
             first = int(data_array[row][column])
             second = int(data_array[row][column+1])
             third = int(data_array[row][column+2])
@@ -101,17 +106,18 @@ def main():
             if temp > product:
                 product = temp
 
-    #vertical
-    for row in range(0, 17):
-        for column in range(0, 20):
+            #vertical
             first = int(data_array[column][row])
-            second = int(data_array[column][row+1])
-            third = int(data_array[column][row+2])
-            forth = int(data_array[column][row+3])
+            second = int(data_array[column+1][row])
+            third = int(data_array[column+2][row])
+            forth = int(data_array[column+3][row])
             temp = first * second * third * forth
             if temp > product:
-                product = temp
-    print(product)
+                product = temp    
+
+    elapsed = (time.time() - start)
+    print(product) 
+    print "%s seconds" % (elapsed)
 
 
 if __name__ == "__main__":
