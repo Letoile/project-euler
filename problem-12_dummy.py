@@ -35,6 +35,7 @@ What is the value of the first triangle number to have over five hundred divisor
 Каково первое треугольное число, у которого более пятисот делителей?
 """
 import math
+import time
 
 def number_of_divisions(num):
 	nod = 0
@@ -51,6 +52,7 @@ def number_of_divisions(num):
  
 
 def main():
+   start = time.time()
    number = 0
    counter = 1
 
@@ -58,7 +60,9 @@ def main():
    		number += counter
    		counter += 1
 
+   elapsed = (time.time() - start) 
    print number
+   print "%s seconds" % (elapsed)
 
 if __name__ == "__main__":
     main()
