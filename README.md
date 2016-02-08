@@ -21,4 +21,4 @@ Tasks from https://projecteuler.net
 * Problem 18 - Maximum path sum I
 *  :x:*Problem 19 - missed*
 * Problem 20 - Factorial digit sum
-*  :exclamation:**Problem 21 - oops, file is missed**
+*  Problem 21 - Amicable numbers
