@@ -21,4 +21,6 @@ Tasks from https://projecteuler.net
 * Problem 18 - Maximum path sum I
 *  :x:*Problem 19 - missed*
 * Problem 20 - Factorial digit sum
-*  Problem 21 - Amicable numbers
+* Problem 21 - Amicable numbers
+* Problem 22 - Names scores (сплит строки в массив, однострочник, пакет string)
+* Problem 23 - Non-abundant sums (действия над множествами, *подумать*, как уменьшить количество циклов)
